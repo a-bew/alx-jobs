@@ -24,6 +24,7 @@ const ResetPassword = lazy(() => import('./pages/ResetPassword/ResetPassword'))
 const Home = lazy(() => import('./pages/Home/Home'))
 
 
+// Design System View
 export const ExampleComponent: React.FC = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -174,7 +175,7 @@ export const AppUX = ()=>{
   )
 }
 
-
+// Routes
 const App = () => {
 
 // Object lookup
