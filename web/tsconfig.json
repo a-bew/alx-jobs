@@ -2,8 +2,9 @@
   "compilerOptions": {
     "paths": {
       "@/*": [
-        "./src/*"
-      ]
+        "./src/*",
+        "./dist/*"
+      ],
     },
     "target": "ESNext",
     "lib": [

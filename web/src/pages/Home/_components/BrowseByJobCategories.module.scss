@@ -1,0 +1,23 @@
+.featured-jobs{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: #F9F9F9;
+}
+
+.highlight {
+    color: #4caf50; // Green color
+    padding-left: 0.8rem;
+}
+
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+

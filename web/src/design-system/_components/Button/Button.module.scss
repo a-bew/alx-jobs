@@ -1,81 +1,120 @@
-// src/design-system/components/Button/Button.module.scss
-
+// Button.module.scss
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 16px;
+  border-radius: 4px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   border: none;
+  gap: 8px;
+  position: relative; // Added for positioning the spinner
 
   &:disabled {
     cursor: not-allowed;
+    opacity: 0.5;
   }
 
-  &.fullWidth {
-    width: 100%;
+  &.loading {
+    cursor: wait;
+    .content {
+      opacity: 0;
+    }
   }
 }
 
-// Primary Button Styles
+// Size variations
+.small {
+  padding: 8px 16px;
+  font-size: 14px;
+  height: 32px;
+}
+
+.medium {
+  padding: 12px 20px;
+  font-size: 16px;
+  height: 40px;
+}
+
+.large {
+  padding: 16px 24px;
+  font-size: 18px;
+  height: 48px;
+}
+
+// Variant styles
 .primary {
-  background-color: #FF5C35; // Your primary color from the design
+  background-color: #4CAF50;
   color: white;
 
   &:hover:not(:disabled) {
-    background-color: darken(#FF5C35, 5%);
+    background-color: darken(#4CAF50, 5%);
   }
 
   &:active:not(:disabled) {
-    background-color: darken(#FF5C35, 10%);
-  }
-
-  &:disabled {
-    background-color: #6B7280;
-    color: rgba(255, 255, 255, 0.7);
+    background-color: darken(#4CAF50, 10%);
   }
 }
 
-// Secondary Button Styles
 .secondary {
   background-color: transparent;
-  border: 2px solid #FF5C35;
-  color: #FF5C35;
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
 
   &:hover:not(:disabled) {
-    background-color: rgba(#FF5C35, 0.05);
+    background-color: rgba(#4CAF50, 0.1);
   }
 
   &:active:not(:disabled) {
-    background-color: rgba(#FF5C35, 0.1);
-  }
-
-  &:disabled {
-    border-color: #6B7280;
-    color: #6B7280;
+    background-color: rgba(#4CAF50, 0.2);
   }
 }
 
-// Tertiary Button Styles
 .tertiary {
   background-color: transparent;
-  color: #FF5C35;
-  padding: 0;
-  text-decoration: none;
+  color: #4CAF50;
+  text-decoration: underline;
 
   &:hover:not(:disabled) {
-    text-decoration: underline;
+    color: darken(#4CAF50, 10%);
   }
 
   &:active:not(:disabled) {
-    color: darken(#FF5C35, 10%);
+    color: darken(#4CAF50, 15%);
   }
+}
 
-  &:disabled {
-    color: #6B7280;
-  }
+
+// Loading spinner styles
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+// Ensure content stays in place when loading
+.content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease-in-out;
+}
+
+
+// Arrow styles
+.arrow {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.arrowLeft {
+  flex-direction: row-reverse;
 }

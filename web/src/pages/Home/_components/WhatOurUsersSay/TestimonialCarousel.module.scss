@@ -1,0 +1,110 @@
+.carouselContainer {
+  width: 90%;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.carouselWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+}
+
+.testimonialWrapper {
+  overflow: hidden;
+  width: 90%;
+  flex:1;
+}
+
+.testimonialSlider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.testimonialCard {
+  min-width: calc(90% / 3); /* 3 cards per page */
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // min-width: 200px;
+}
+
+.testimonialText {
+  margin-bottom: 1rem;
+  color: #4a5568;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+}
+
+.authorAvatar {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a0aec0;
+}
+
+.authorDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
+  font-weight: 600;
+  margin: 0;
+}
+
+.authorCompany {
+  font-size: 0.875rem;
+  color: #718096;
+  margin: 0;
+}
+
+.navButton {
+  background-color: white;
+  border-radius: 50%;
+  padding: 1rem;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1rem;
+}
+
+.navButton:hover {
+  background-color: #f7fafc;
+}
+
+.prevButton {
+  margin-right: 1rem;
+}
+
+.nextButton {
+  margin-left: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .testimonialCard {
+    min-width: calc(100% / 2); /* 2 cards per page */
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonialCard {
+    min-width: 100%; /* 1 card per page */
+  }
+}

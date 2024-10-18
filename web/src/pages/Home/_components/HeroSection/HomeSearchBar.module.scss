@@ -1,0 +1,33 @@
+.searchBar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 0.5rem;
+
+    // padding-left: 0.8rem;
+    border-radius: 4px;
+  
+    input {
+      flex: 1;
+      padding: 0em;
+      border: none;
+      outline: none;
+    }
+  
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      cursor: pointer;
+    }
+  
+    @media (max-width: 768px) {
+      // flex-direction: column;
+  
+      input {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  

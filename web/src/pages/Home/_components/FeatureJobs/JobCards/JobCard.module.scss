@@ -1,0 +1,91 @@
+// components/JobCard/JobCard.module.scss
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+  
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .company {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff9900 0%, #ff9900 50%, #ff69b4 50%, #ff69b4 100%);
+    
+  }
+  
+  .badge {
+    background: #e8f1ff;
+    color: #4b7bec;
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.875rem;
+  }
+  
+  .content {
+    margin: 1rem 0;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .salary {
+    color: #4b7bec;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .description {
+    color: #666;
+    font-size: 0.875rem;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.875rem;
+  }
+  
+  .applyButton {
+    background: #4b7bec;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  
+    &:hover {
+      background: #3867d6;
+    }
+  }

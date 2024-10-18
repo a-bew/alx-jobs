@@ -1,29 +1,20 @@
-import React from 'react'
 import styles  from './Home.module.scss'
-import Logo from '@/design-system/_components/Logo/Logo'
-import { Button } from '@/design-system/_components/Button/Button'
-
+import { HeroSection } from './_components/HeroSection'
+import FeatureJobs from './_components/FeatureJobs'
+import TopCompanies from './_components/TopCompaniesHiring'
+import HowAlxJobWorks from './_components/HowAlxJobWorks'
+import BrowseByJobCategories from './_components/BrowseByJobCategories'
+import WhatOurUsersSay from './_components/WhatOurUsersSay'
 const Home = () => {
   return (
     <div className={styles['home-page']}>
-      <div className={styles['body']}>
-          <Logo size={64} />
-
-            
-            <span className={styles['onboarding-title']}> 
-               Welcome to BitmergeX
-
-            </span>
-            <span className={styles['onboarding-subtitle']}>
-            Experience the best of technology with BitmergeX. Our app offers seamless integration, under-friendly interfaces, and top-notch experience.
-            </span>
-
-            <div className={styles['onboarding-buttons']}>
-                <Button variant="primary" style={{width: '100%'}} >Login</Button>
-                <Button variant="secondary" style={{width: '100%'}}>Create Account</Button>
-            </div>
-
-          </div>
+        <HeroSection />
+        <div style={{height: 600}}></div>
+        <TopCompanies />
+        <HowAlxJobWorks />
+        <BrowseByJobCategories />
+        <FeatureJobs />
+        <WhatOurUsersSay />
     </div>
   )
 }

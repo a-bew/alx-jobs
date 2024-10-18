@@ -1,3 +1,7 @@
+:root {
+  --secondary-color: #4CAF50;
+}
+
 // FormControls.module.scss
 .checkboxContainer,
 .radioContainer {
@@ -12,7 +16,7 @@
   &:hover:not(.disabled) {
     .checkbox,
     .radio {
-      border-color: #ff4444;
+      border-color: var(--secondary-color);
     }
   }
 
@@ -34,7 +38,7 @@
   &.error {
     .checkbox,
     .radio {
-      border-color: #ff4444;
+      border-color: var(--secondary-color);
     }
   }
 }
@@ -50,10 +54,11 @@
     box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.2);
   }
 
+  
   &:checked + .checkbox,
   &:checked + .radio {
-    background: #ff4444;
-    border-color: #ff4444;
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
   }
 }
 
@@ -96,7 +101,7 @@
 
 .label {
   a {
-    color: #ff4444;
+    color: var(--secondary-color);
     text-decoration: none;
 
     &:hover {

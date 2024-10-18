@@ -1,0 +1,69 @@
+:root{
+    --body-background: #CCD4DB;
+}
+
+
+.signup-container{
+
+    max-width: 1440px;
+    height: 100%;
+    background-color: var(--body-background);
+
+    .body{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        @media screen and (max-width: 1000px) {
+            flex-direction: column;
+                    justify-content: center;
+
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        padding: 0 0.7rem;
+
+
+    }
+
+.banner-container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex: 0.5;
+    width: 50%;
+    position: relative;
+    .banner{
+        flex: 0.5;
+        width: 45%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: green;
+        position: fixed;
+
+    }
+
+    @media screen and (max-width: 1000px) {
+        display: none;
+
+    }
+}
+    
+.signup-form{
+        flex: 0.5;
+        width: 50%;
+        min-width: 350px;
+
+        @media screen and (max-width: 1000px) {
+            width: 100%;
+
+        }
+
+    }
+
+
+   
+
+}

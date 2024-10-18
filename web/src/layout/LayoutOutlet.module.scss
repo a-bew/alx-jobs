@@ -1,0 +1,11 @@
+@import '@/design-system/globalStyles/index.global.scss';
+
+.body {
+    flex: 0 0 100%;
+    min-height: calc(100vh - rem(55) - rem(125));
+    top: rem(50);
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+  }
+  

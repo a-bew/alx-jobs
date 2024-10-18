@@ -1,0 +1,59 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    // border: 1px solid #e0e0e0;
+    
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease-in-out;
+    text-align: left;
+    max-width: 240px;
+    
+    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+    &:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+  
+    &.active {
+    //   background-color: #e0f7e8;
+    }
+  
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 1rem;
+    //   margin-bottom: 1rem;
+    }
+  }
+  
+  .icon {
+    font-size: 2rem;
+    // margin-bottom: 1rem;
+    color: #4caf50;
+  
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+  
+  .title {
+    font-size: 1rem;
+    font-weight: 600;
+    // margin-bottom: 0.75rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #666;
+
+    //styleName: Body Text/Medium, Regular;
+    font-family: Poppins;
+    font-weight: 400;
+    // line-height: var(--LineHeightBodyM400);
+    line-height: 150%;
+    text-align: left;
+
+  }
+  

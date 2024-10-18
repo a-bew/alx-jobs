@@ -9,6 +9,17 @@ import { Radio } from './design-system/_components/FormControls/Radio'
 import { Checkbox } from './design-system/_components/FormControls/Checkbox';
 import LayoutOutlet from './layout/LayoutOutlet';
 import ErrorPage from './error/ErrorPage';
+import RequireAuth from './redux/authentication/features/RequireAuth';
+import SideNotification from './design-system/_components/SideNotification/SideNotification';
+import RequireAuthWithRoles from './redux/authentication/features/RequireAuthWithRoles';
+// import useNotification from './design-system/globalhook/useNotification';
+
+const SignUp = lazy(() => import('./pages/SignUp/SignUp'))
+const WelcomeBack = lazy(() => import('./pages/SignIn/SignIn'))
+const ForgotPassword = lazy(() => import('./pages/ForgetPassword/ForgetPassword'))
+const EmailVerification = lazy(() => import('./pages/EmailVerification/EmailVerification'))
+const CheckYourEmail = lazy(() => import('./pages/CheckYourEmail/CheckYourEmail'))
+const ResetPassword = lazy(() => import('./pages/ResetPassword/ResetPassword'))
 
 const Home = lazy(() => import('./pages/Home/Home'))
 
@@ -16,23 +27,22 @@ const Home = lazy(() => import('./pages/Home/Home'))
 export const ExampleComponent: React.FC = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+
       {/* Primary Buttons */}
-      <Button variant="primary" >Sign Up</Button>
-      <Button variant="primary" disabled>
-        Sign Up
-      </Button>
-
+      <Button>Default Button</Button>
+      <Button withArrow>With Arrow</Button>
+      <Button size="large" withArrow>Large Button</Button>
+      
       {/* Secondary Buttons */}
-      <Button variant="secondary">Sign Up</Button>
-      <Button variant="secondary" disabled>
-        Sign Up
-      </Button>
-
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="secondary" withArrow>Secondary with Arrow</Button>
+      
       {/* Tertiary Buttons */}
-      <Button variant="tertiary">Forgot your password?</Button>
-      <Button variant="tertiary" disabled>
-        Forgot your password?
-      </Button>
+      <Button variant="tertiary">Tertiary</Button>
+      <Button variant="tertiary" withArrow>Tertiary with Arrow</Button>
+      
+      {/* Disabled State */}
+      <Button disabled>Disabled Button</Button>
     </div>
   );
 };
@@ -166,16 +176,47 @@ export const AppUX = ()=>{
 
 
 const App = () => {
+
+// Object lookup
+
   return (
-    <BrowserRouter>
+    <>
+
+<BrowserRouter>
       <Routes>
         <Route  element={<LayoutOutlet />}>
 
         <Route path='/' element={<Home />} />
 
           <Route path='/ux' element={<AppUX />} />
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='/signin' element={<WelcomeBack />} />
+          <Route path='/forgot-password' element={<ForgotPassword />} />
+          <Route path='/verify-email/:verifyToken' element={<EmailVerification />} />
+          <Route path='/check-your-email' element={<CheckYourEmail />} />
+          <Route path='/reset-password/:reset-token' element={<ResetPassword />} />
 
-      
+          <Route element = {<RequireAuthWithRoles allowedRoles={['user']} />} >
+              <Route path='/candidate/profile' element = {<></>} />
+              <Route path='/candidate/dashboard' element = {<></>} />
+              <Route path='/job/:id/details' element = {<></>} />
+              <Route path='/job/:id/apply' element = {<></>} />
+          </Route>
+        
+          <Route element = {<RequireAuthWithRoles allowedRoles={['admin']} />} >
+            <Route path='/admin/profile' element = {<></> } />
+            {/* <Route path='/admin/profile' element = {<></> } />
+            <Route path='/admin/profile' element = {<></> } /> */}
+
+          </Route>
+
+          <Route element = {<RequireAuthWithRoles allowedRoles={['company']} />} >
+            <Route path='/company/profile' element = {<></> } />
+            {/* <Route path='/company/profile' element = {<></> } />
+            <Route path='/company/profile' element = {<></> } /> */}
+
+          </Route>
+
           <Route path="/error" element={<ErrorPage />} />
           <Route element={<ErrorPage />} />
           <Route path='*' element={<Navigate replace to="/error" />} />
@@ -183,7 +224,8 @@ const App = () => {
         </Route>
     </Routes>
     </BrowserRouter>
-    // <Home />
+
+    </>
   )
 } 
 

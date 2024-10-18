@@ -1,5 +1,5 @@
 // FormControls.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './FormControls.module.scss';
 
 interface CheckboxProps {
@@ -17,6 +17,10 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   children,
   error = false,
 }) => {
+
+  // Example with form state management
+  const [agreed, setAgreed] = useState(false);
+
   return (
     <label
       className={`${styles.checkboxContainer} ${disabled ? styles.disabled : ''} ${

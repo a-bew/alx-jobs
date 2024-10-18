@@ -1,0 +1,92 @@
+
+
+.notification {
+  max-width: 300px;
+  width: calc(100% - 40px);
+  transition: all 0.3s ease-in-out;
+  // z-index: 1000;
+  margin: 0 20px;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  &.default .content {
+    background-color: #fff;
+    border-left: 4px solid #3b82f6;
+  }
+
+  &.urgent .content {
+    background-color: #fee2e2;
+    border-left: 4px solid #ef4444;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.urgentIcon {
+  color: #ef4444;
+}
+
+.defaultIcon {
+  color: #3b82f6;
+}
+
+.message {
+  flex-grow: 1;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #1f2937;
+  word-break: break-word;
+}
+
+.closeButton {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+  color: #9ca3af;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #4b5563;
+  }
+}
+
+.closeIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
