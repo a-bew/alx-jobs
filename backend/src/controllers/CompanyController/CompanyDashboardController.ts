@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import createHttpError from 'http-errors';
-import { companyDashboardService } from "services/CompanyService/CompanyDashboardService";
+import { companyDashboardService } from "../../services/CompanyService/CompanyDashboardService";
 import { asyncWrapper } from "../../controllers/utils/asyncWrapper";
 import { sendResponse, sendError } from "../../helpers";
 

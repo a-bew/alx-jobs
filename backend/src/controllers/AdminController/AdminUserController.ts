@@ -1,11 +1,8 @@
-import { asyncWrapper } from 'controllers/utils/asyncWrapper';
+import { asyncWrapper } from '../../controllers/utils/asyncWrapper';
 import { Request, Response } from 'express';
-import { sendError, sendResponse } from 'helpers';
-// import { asyncWrapper } from '../middlewares/asyncWrapper';
-// import { adminUserService } from '../services/AdminUserService';
+import { sendError, sendResponse } from '../../helpers';
 import createHttpError from 'http-errors';
-import { adminUserService } from 'services/AdminService/AdminUserService';
-// import { sendResponse, sendError } from '../helpers/response';
+import { adminUserService } from '../../services/AdminService/AdminUserService';
 
 // PUT: Admin deactivates a user account
 export const deactivateUser = asyncWrapper(async (req: Request, res: Response) => {

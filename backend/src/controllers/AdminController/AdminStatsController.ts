@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import createHttpError from 'http-errors';
 import { sendResponse, sendError } from '../../helpers/response';
-import { asyncWrapper } from 'controllers/utils/asyncWrapper';
-import { adminStatsService } from 'services/AdminService/AdminStatsService';
+import { asyncWrapper } from '../../controllers/utils/asyncWrapper';
+import { adminStatsService } from '../../services/AdminService/AdminStatsService';
 
 // GET: Admin fetches job application statistics
 export const getJobApplicationStats = asyncWrapper(async (req: Request, res: Response) => {

@@ -35,7 +35,6 @@ const LayoutOutlet = ({children = null}: {children?: React.ReactNode}) => {
   ))}
 </GroupNotification>
 
-
     <div className={styles['body']}>
       <Outlet />
     </div>

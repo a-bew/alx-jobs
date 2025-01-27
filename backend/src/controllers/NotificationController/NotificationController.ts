@@ -3,7 +3,7 @@ import { asyncWrapper } from '../utils/asyncWrapper';
 import createHttpError from 'http-errors';
 import { messages } from '../../constants';
 import { sendError, sendResponse } from '../../helpers';
-import { notificationService } from 'services/NotificationService/NotificationService';
+import { notificationService } from '../../services/NotificationService/NotificationService';
 
 // GET: Fetch notifications by recipient (user or company)
 export const getNotifications = asyncWrapper(async (req: Request, res: Response) => {

@@ -2,11 +2,11 @@ import { Router } from 'express';
 import { postNewJob, updateJob, deleteJob } from '../controllers/CompanyController/CompanyJobController';
 import { companyLogin, companySignup } from '../controllers/CompanyController/CompanyAuthCountroller';
 import { authVerifier } from '../middleware/authVerifier';
-import { UserAccessLevel } from 'types';
+import { UserAccessLevel } from '../types';
 import { getApplicantsForJob, getApplicantDetails } from '../controllers/CompanyController/JobApplicantController';
 import { sendMessageToApplicant } from '../controllers/CompanyController/ApplicantMessagingController';
-import { getApplicantStatus, getCompanyJobs, getJobApplications, updateJobStatus } from 'controllers/CompanyController/CompanyDashboardController';
-import { cancelSubscription,  createSubscription, getCompanySubscription, updateSubscription } from 'controllers/CompanyController/SubscriptionController';
+import { getApplicantStatus, getCompanyJobs, getJobApplications, updateJobStatus } from '../controllers/CompanyController/CompanyDashboardController';
+import { cancelSubscription,  createSubscription, getCompanySubscription, updateSubscription } from '../controllers/CompanyController/SubscriptionController';
 
 
 const router = Router();

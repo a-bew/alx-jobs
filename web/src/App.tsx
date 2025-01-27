@@ -12,8 +12,6 @@ import ErrorPage from './error/ErrorPage';
 import RequireAuth from './redux/authentication/features/RequireAuth';
 import SideNotification from './design-system/_components/SideNotification/SideNotification';
 import RequireAuthWithRoles from './redux/authentication/features/RequireAuthWithRoles';
-// import useNotification from './design-system/globalhook/useNotification';
-
 const SignUp = lazy(() => import('./pages/SignUp/SignUp'))
 const WelcomeBack = lazy(() => import('./pages/SignIn/SignIn'))
 const ForgotPassword = lazy(() => import('./pages/ForgetPassword/ForgetPassword'))

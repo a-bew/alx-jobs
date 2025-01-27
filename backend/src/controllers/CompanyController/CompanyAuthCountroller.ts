@@ -1,8 +1,9 @@
-import { asyncWrapper } from 'controllers/utils/asyncWrapper';
+// import { asyncWrapper } from 'controllers/utils/asyncWrapper';
+import { asyncWrapper } from '../../controllers/utils/asyncWrapper';
 import { Request, Response } from 'express';
-import { sendError, sendResponse } from 'helpers';
+import { sendError, sendResponse } from '../../helpers';
 import createHttpError from 'http-errors';
-import { companyAuthService } from 'services/CompanyService/CompanyAuthService';
+import { companyAuthService } from '../../services/CompanyService/CompanyAuthService';
 
 // POST: Company Signup
 export const companySignup = asyncWrapper(async (req: Request, res: Response) => {

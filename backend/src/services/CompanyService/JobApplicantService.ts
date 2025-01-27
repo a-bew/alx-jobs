@@ -3,8 +3,6 @@ import { UserModel as IUser  } from '../../database/UserModel';
 import JobApplication from '../../database/JobApplication';
 import createHttpError from 'http-errors';
 import Job from '../../database/Job';
-// import { NotFoundError } from '@/utils/errors';
-import { Types } from 'mongoose';
 
 class JobApplicantService {
   

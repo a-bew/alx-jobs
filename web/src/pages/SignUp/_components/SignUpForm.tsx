@@ -9,9 +9,7 @@ import { GrFacebookOption } from 'react-icons/gr';
 import { FcGoogle } from 'react-icons/fc';
 import useSignupForm from '../hooks/useSignupForm';
 
-
 export const SignupForm: React.FC = () => {
-
     const {
         formData,  handleInputChange,
         errors,

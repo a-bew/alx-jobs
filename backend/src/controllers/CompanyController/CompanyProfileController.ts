@@ -1,11 +1,8 @@
-import { asyncWrapper } from 'controllers/utils/asyncWrapper';
+import { asyncWrapper } from '../../controllers/utils/asyncWrapper';
 import { Request, Response } from 'express';
-import { sendError, sendResponse } from 'helpers';
-// import { asyncWrapper } from '../middlewares/asyncWrapper';
-// import { companyService } from '../services/CompanyService';
+import { sendError, sendResponse } from '../../helpers';
 import createHttpError from 'http-errors';
-import { companyService } from 'services/CompanyService/CompanyService';
-// import { sendResponse, sendError } from '../helpers/response';
+import { companyService } from '../../services/CompanyService/CompanyService';
 
 // GET: View Company Profile
 export const viewCompanyProfile = asyncWrapper(async (req: Request, res: Response) => {

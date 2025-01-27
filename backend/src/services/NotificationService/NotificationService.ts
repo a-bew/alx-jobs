@@ -52,7 +52,7 @@ export class NotificationService {
   // Fetch system-wide notifications
   async getSystemNotifications() {
     const notifications = await notificationModel.find({
-      notificationType: 'System',
+      notificationType: NotificationType.SYSTEM,
       recipient: null,
     }).exec();
 

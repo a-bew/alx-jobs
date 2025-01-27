@@ -1,7 +1,7 @@
-import { asyncWrapper } from 'controllers/utils/asyncWrapper';
+import { asyncWrapper } from '../../controllers/utils/asyncWrapper';
 import { Request, Response } from 'express';
-import { sendError, sendResponse } from 'helpers';
-import { jobApplicantService } from 'services/CompanyService/JobApplicantService';
+import { sendError, sendResponse } from '../../helpers';
+import { jobApplicantService } from '../../services/CompanyService/JobApplicantService';
 
 
 // Fetch applicants for a specific job

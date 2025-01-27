@@ -5,7 +5,7 @@ import passport from "passport";
 import { JwtPayload, UserAccessLevel } from "../types";
 import { logger, sendError } from "../helpers";
 import { messages } from "../constants";
-import { AccessLevel } from "database/Admin";
+import { AccessLevel } from "../database/Admin";
 
 export const authVerifier = {
   verifyAccessToken: (req: Request|any, res: Response, next: NextFunction) =>

@@ -1,6 +1,6 @@
-import { asyncWrapper } from 'controllers/utils/asyncWrapper';
+import { asyncWrapper } from '../../controllers/utils/asyncWrapper';
 import { Request, Response } from 'express';
-import { sendError, sendResponse } from 'helpers';
+import { sendError, sendResponse } from '../../helpers';
 import createHttpError from 'http-errors';
 import { adminJobService } from '../../services/AdminService/AdminJobService';
 
@@ -25,7 +25,7 @@ export const postJob = asyncWrapper(async (req: Request, res: Response) => {
   } catch (error: any) {
     return sendError(res, createHttpError(500, error.message));
   }
-  
+
 });
 
 // PUT: Admin updates an existing job listing
@@ -55,13 +55,17 @@ export const updateJob = asyncWrapper(async (req: Request, res: Response) => {
 
 // DELETE: Admin deletes a job listing
 export const deleteJob = asyncWrapper(async (req: Request, res: Response) => {
-  const { jobId } = req.params;
+    const { jobId } = req.params;
 
-  try {
-    const deletedJob = await adminJobService.deleteJob(jobId);
+    try {
+        const deletedJob = await adminJobService.deleteJob(jobId);
 
-    return sendResponse(res, deletedJob, 200);
-  } catch (error: any) {
+        return sendResponse(res, deletedJob, 200);
+
+    } catch (error: any) {
+
     return sendError(res, createHttpError(500, error.message));
-  }
+
+}
+
 });

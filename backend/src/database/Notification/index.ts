@@ -23,6 +23,9 @@ export interface INotification extends Document {
   recipientType: 'User' | 'Company' | null;    // Whether it's targeting a User or a Company (null if system-wide)
   priority: NotificationPriority;      // Priority level
   isRead: boolean;           // Whether the notification has been read
+  expiresAt: Date;
+  deliveryMethod: string;
+  deliveryStatus: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -62,6 +65,21 @@ const NotificationSchema: Schema = new Schema(
       type: Boolean,
       default: false,   // Default to unread
     },
+    
+    expiresAt: {
+      type: Date,
+      default: null,  // Can set a specific expiration date if needed
+    },
+    deliveryMethod: {
+      type: String,
+      enum: ['InApp', 'Email', 'SMS'],
+      default: 'InApp',  // Default to in-app notifications
+    },
+    deliveryStatus: {
+      type: String,
+      enum: ['Pending', 'Sent', 'Failed'],
+      default: 'Pending',  // Track whether an email/SMS was sent successfully
+    }
   },
   {
     timestamps: true,  // Automatically adds createdAt and updatedAt fields
